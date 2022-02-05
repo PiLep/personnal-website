@@ -5,15 +5,15 @@
         <span style="color: rgba(255, 196, 79, 1); font-weight: 500;">
           JS
         </span>
-        frontend.js
+        Vue.js
       </div>
       <div class="file-node">
         <span style="color: rgba(203, 153, 52, 0.4)">
           <img class="inline mr-2" src="~/assets/img/php.svg" style="width: 16px; text-align: center;">
-        </span>backend.php
+        </span>Laravel.php
       </div>
       <div class="file-node">
-        <span style="color: rgba(139, 233, 253,0.4);">#</span> style.css
+        <span style="color: rgba(139, 233, 253,0.4);">#</span> Tailwind.css
       </div>
       <div class="folder-node">
         <span style="color: rgba(139, 233, 253,0.4);vertical-align: middle;">
@@ -25,7 +25,7 @@
             <a target="_blank" class="visible curiculum-link" href="Pierre_Lepetit_CV.pdf">
               <span style="color: rgba(190, 49, 49, 0.629); vertical-align: middle;">
                 <font-awesome-icon icon="file-alt" class="mr-2" />
-              </span>curiculum.pdf
+              </span>Curiculum.pdf
             </a>
           </div>
         </div>
@@ -56,7 +56,9 @@ export default {
 .filetree {
     transform-style: preserve-3d;
     transform: rotateX(0deg);
-    @apply flex flex-col p-2 text-sm bg-gray-900;
+    @apply flex flex-col p-2 text-sm;
+        background-color: #222325;
+
 }
 
 .folder-node {

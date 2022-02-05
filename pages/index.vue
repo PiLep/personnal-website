@@ -1,5 +1,6 @@
 <template>
   <div>
+    <header-content />
     <div class="main p-1 py-2 pb-8 md:p-8 md:py-16 gap-1">
       <div class="hidden md:flex md:w-1/4 ">
         <file-tree />

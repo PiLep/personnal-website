@@ -33,7 +33,7 @@
           class="animated pulse"
           style="color: #F4971E; font-weight: 800; display: inline-block;"
         >
-          <img id="kantalogo" alt="logo_Kanta" style="height:15px;" src="https://kanta.fr/assets/images/logo.svg">
+          <img id="kantalogo" alt="logo_Kanta" style="height:15px;" src="~/assets/img/logo.svg">
         </a><span class="string-color">'</span>,
         <span class="string-color">'CTO'</span>
         <span class="array-color">]</span>
@@ -45,7 +45,7 @@
         = <span class="array-color">[</span>
       </div>
       <div class="multiline-array-content-padding">
-        <span class="var-name-color">{ 📧 : </span><a
+        <span class="var-name-color">{ email: </span><a
           href="mailto:contact@pierrelepetit.com"
           target="_blank"
         ><span
@@ -53,7 +53,8 @@
           style="display:inline-block; font-weight: 800"
         >'contact@pierrelepetit.com'</span></a>
         <span class="brackets-color">}</span>,<br>
-        <span class="var-name-color">{ 👨‍💼 :</span> <a
+        <span class="var-name-color">{
+          <img id="kantalogo" alt="logo_Kanta" style="height:18px; display:inline" src="~/assets/img/linkedin.svg">:</span> <a
           href="https://www.linkedin.com/in/pilep/"
           target="_blank"
         >
@@ -100,6 +101,10 @@ export default {
     background-color: #222325;
     transform: translateZ(20px) rotateX(0deg);
     /* left: 45%; */
+}
+
+::selection {
+  background-color: #1e3a55;
 }
 
 .editor-top-bar {
