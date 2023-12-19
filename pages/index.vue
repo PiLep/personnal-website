@@ -1,29 +1,30 @@
 <template>
-  <div>
-    <header-content />
-    <div class="main p-1 py-2 pb-8 md:p-8 md:py-16 gap-1">
-      <div class="hidden md:flex md:w-1/4 ">
-        <file-tree />
+  <div class="main overflow-hidden">
+    <div class="p-2 m-2 md:p-10 md:m-10 z-10">
+      <h1 class="flex font-main bg-gradient-to-r from-orange-200 via-blue-400 to-purple-600 text-6xl font-bold text-transparent bg-clip-text animate-gradient">
+        Pierre Lepetit
+      </h1>
+      <div class="flex items-center gap-2 -mt-6 font-secondary text-4xl font-normal bg-gradient-to-r from-red-200 via-orange-400 to-pink-600 text-transparent bg-clip-text animate-gradient">
+        <span>CTO</span>
+        <span class="">@</span>
+        <a href="https://kanta.fr" target="_blank" class="hover:font-black">Kanta</a>
       </div>
-      <div class="flex w-full md:w-3/4">
-        <editor />
+
+      <div class="flex flex-row gap-4 p-4 items-center">
+        <a href="https://github.com/pilep" target="_blank" class="w-8 opacity-75">
+          <img src="~/assets/img/github-mark.svg" class="logo">
+        </a>
       </div>
-      <shell v-if="1===2" />
     </div>
-    <footer-content libelle="Développé avec ❤️ en Normandie" />
     <babouche />
   </div>
 </template>
 
 <script>
 import Babouche from '../components/Babouche.vue'
-import Editor from '../components/Editor.vue'
-import FileTree from '../components/FileTree.vue'
-import FooterContent from '../components/FooterContent.vue'
-import Shell from '../components/Shell.vue'
 
 export default {
-  components: { Editor, FileTree, Shell, Babouche, FooterContent },
+  components: { Babouche },
   /*
    ** programmatically start the loader so we force the page to take x2seconds to load
    */
@@ -42,8 +43,30 @@ export default {
 .main {
     @apply flex flex-row;
     @apply min-h-full h-screen;
-    @apply bg-gradient-to-br from-gray-700 via-gray-800 to-gray-700;
+    @apply bg-gray-900;
     perspective: 1000px;
-    @apply font-mono;
+}
+
+.animate-gradient {
+  background-size: 300%;
+  -webkit-animation: animatedgradient 60s ease infinite alternate;
+  -moz-animation: animatedgradient 60s ease infinite alternate;
+  animation: animatedgradient 60s ease infinite alternate;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.logo {
+    filter: invert(1);
 }
 </style>

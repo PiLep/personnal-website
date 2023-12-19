@@ -38,7 +38,8 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -58,6 +59,17 @@ export default {
         icons: ['fas']
       }
     ]
+  },
+
+  googleFonts: {
+    families: {
+      'Barlow Condensed': {
+        wght: [600, 900]
+      },
+      Montserrat: {
+        wght: [100, 400]
+      }
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
