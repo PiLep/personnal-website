@@ -1,16 +1,14 @@
-/*eslint-disable */
-const { screens } = require('tailwindcss/defaultTheme')
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: false,
-  variants: {
-  },
-  plugins: [],
+  darkMode: 'class',
+  content: ['./index.html'],
   theme: {
     extend: {
-        fontFamily: {
-            'sans': ['Barlow Condensed', 'serif'],
-            'secondary': ['Montserrat', 'serif'],
-            }
-        }
+      fontFamily: {
+        display: ['Space Grotesk', 'ui-sans-serif', 'system-ui'],
+        secondary: ['Inter', 'ui-sans-serif', 'system-ui']
+      }
     }
+  },
+  plugins: []
 }

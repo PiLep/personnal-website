@@ -1,20 +1,25 @@
 # pierrelepetit.com
 
-## Build Setup
+Site personnel statique avec Tailwind CSS.
+
+## Développement
 
 ```bash
-# install dependencies
-$ npm install
+# Installer les dépendances
+npm install
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+# Dev: rebuild Tailwind en continu
+npm run dev
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+# Build: CSS minifié pour production
+npm run build
 
-# generate static project
-$ npm run generate
+# Servir en local (optionnel)
+npm run serve
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+Puis ouvre `http://localhost:5173`.
+
+## Déploiement
+
+Le site est automatiquement déployé sur GitHub Pages via GitHub Actions lors d'un push sur `master`.

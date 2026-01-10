@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pierre Lepetit — CTO & Co-founder at Kanta</title>
+  <meta name="description"
+    content="CTO & Co-founder at Kanta. Focused on building web products, AI revolution, and tech leadership." />
+  <meta name="author" content="Pierre Lepetit" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pierrelepetit.com/" />
+  <meta property="og:title" content="Pierre Lepetit — CTO & Co-founder at Kanta" />
+  <meta property="og:description"
+    content="CTO & Co-founder at Kanta. Focused on building web products, AI revolution, and tech leadership." />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:url" content="https://pierrelepetit.com/" />
+  <meta property="twitter:title" content="Pierre Lepetit — CTO & Co-founder at Kanta" />
+  <meta property="twitter:description"
+    content="CTO & Co-founder at Kanta. Focused on building web products, AI revolution, and tech leadership." />
+
+  <link rel="icon" href="./static/favicon.ico" />
+  <link rel="manifest" href="./manifest.json" />
+
+  <!-- Optimized font loading with font-display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@600;700&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all';this.onload=null" />
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet" />
+  </noscript>
+
+  <link rel="stylesheet" href="./dist/tailwind.css" />
+
+  <!-- Preload critical images with fetchpriority -->
+  <link rel="preload" as="image" href="./assets/img/linkedin.svg" fetchpriority="high" />
+  <link rel="preload" as="image" href="./assets/img/github-mark.svg" fetchpriority="high" />
+
+  <!-- DNS prefetch for external links -->
+  <link rel="dns-prefetch" href="https://kanta.fr" />
+  <link rel="dns-prefetch" href="https://visma.com" />
+</head>
+
+<body
+  class="min-h-screen bg-animated-gradient text-zinc-900 dark:text-zinc-100 font-secondary antialiased transition-colors duration-500">
+  <!-- Dark Mode Toggle -->
+  <button id="darkModeToggle"
+    class="dark-mode-toggle fixed top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/90 dark:bg-zinc-800/90 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-all duration-300 flex items-center justify-center elegant-entrance-delay-2"
+    aria-label="Toggle dark mode" type="button">
+    <svg id="sunIcon" class="w-6 h-6 text-zinc-900 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+      aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+    <svg id="moonIcon" class="w-6 h-6 text-zinc-100 hidden dark:block" fill="none" stroke="currentColor"
+      viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>
+  </button>
+
+  <!-- Section 1: Hero -->
+  <section id="hero"
+    class="relative z-10 min-h-screen flex flex-col justify-center items-center perspective-container px-8"
+    style="content-visibility: auto">
+    <div class="w-full max-w-5xl tilt-card">
+      <h1
+        class="font-display leading-[0.86] tracking-[-0.04em] text-6xl sm:text-7xl lg:text-8xl elegant-entrance text-animated-gradient-hover">
+        <span class="text-animated-gradient">
+          <span class="block sm:inline">Pierre</span><span class="hidden sm:inline">&nbsp;</span><span
+            class="block sm:inline">Lepetit</span>
+        </span>
+      </h1>
+      <p
+        class="font-secondary font-medium text-xl sm:text-2xl tracking-[-0.02em] opacity-80 ml-1 mt-2 elegant-entrance-delay-1">
+        <span class="font-black text-animated-gradient relative left-[0.05em]">CTO @
+          <a href="https://kanta.fr" target="_blank" rel="noopener noreferrer"
+            class="font-black text-link-bright text-animated-gradient shimmer-link">Kanta</a></span>
+      </p>
+
+      <div class="flex gap-3 items-center mt-3 ml-2 elegant-entrance-delay-2">
+        <a href="https://www.linkedin.com/in/pilep/" target="_blank" rel="noopener noreferrer"
+          class="social-link hover-lift" aria-label="LinkedIn profile">
+          <img src="./assets/img/linkedin.svg" alt="" width="24" height="24" class="w-6 h-6" decoding="async"
+            fetchpriority="high" />
+        </a>
+        <a href="https://github.com/PiLep" target="_blank" rel="noopener noreferrer" class="social-link hover-lift"
+          aria-label="GitHub profile">
+          <img src="./assets/img/github-mark.svg" alt="" width="20" height="20" class="w-5 h-5 dark:invert"
+            decoding="async" fetchpriority="high" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <button id="scrollIndicator"
+      class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center justify-center transition-all duration-300 elegant-entrance-delay-2"
+      aria-label="Scroll to next section" type="button">
+      <svg class="w-8 h-8 animate-bounce-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </button>
+  </section>
+
+  <!-- Section 2: About/Experience -->
+  <section id="about" class="relative z-10 min-h-screen flex flex-col justify-center items-start px-8 py-20"
+    style="content-visibility: auto; contain-intrinsic-size: auto 100vh">
+    <div class="w-full max-w-3xl mx-auto space-y-24">
+
+      <!-- Experience -->
+      <div class="space-y-4">
+        <h2 class="font-display text-2xl sm:text-3xl text-animated-gradient">Currently</h2>
+        <div>
+          <h3 class="font-display text-xl font-semibold opacity-70">Chief Technology Officer & Co-founder</h3>
+          <a href="https://kanta.fr" target="_blank" rel="noopener noreferrer"
+            class="company-link inline-block mt-2 hover-lift font-black text-xl" style="color: #ff9000;">
+            Kanta
+          </a>
+          |
+          <a href="https://visma.com" target="_blank" rel="noopener noreferrer"
+            class="company-link inline-block mt-2 hover-lift font-black text-xl text-red dark:text-white">Visma</a>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="space-y-4">
+        <h2 class="font-display text-2xl sm:text-3xl text-animated-gradient">Focus on</h2>
+        <div class="flex flex-wrap gap-8">
+          <span class="badge-minimal badge-blue" data-tooltip="Full-stack development & product design">Build web
+            products</span>
+          <span class="badge-minimal badge-purple" data-tooltip="AI Driven Development with agents">AI revolution</span>
+          <span class="badge-minimal badge-orange" data-tooltip="Team building & technical strategy">Tech
+            Leadership</span>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="space-y-4">
+        <h2 class="font-display text-2xl sm:text-3xl text-animated-gradient">Connect</h2>
+        <div class="flex gap-6 items-center">
+          <a href="https://www.linkedin.com/in/pilep/" target="_blank" rel="noopener noreferrer"
+            class="social-link hover-lift" aria-label="LinkedIn profile">
+            <img src="./assets/img/linkedin.svg" alt="" width="32" height="32" class="w-8 h-8" loading="lazy"
+              decoding="async" />
+          </a>
+          <a href="https://github.com/PiLep" target="_blank" rel="noopener noreferrer" class="social-link hover-lift"
+            aria-label="GitHub profile">
+            <img src="./assets/img/github-mark.svg" alt="" width="28" height="28" class="w-7 h-7 dark:invert"
+              loading="lazy" decoding="async" />
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // Initialize theme immediately (FOUC prevention)
+    (function () {
+      try {
+        const theme = localStorage.getItem('theme') || 'light';
+        if (theme === 'dark') document.documentElement.classList.add('dark');
+      } catch (e) { }
+    })();
+
+    // Detect touch capability
+    const isTouchDevice = () => ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const body = document.body;
+      const tiltCard = document.querySelector('.tilt-card');
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const scrollIndicator = document.getElementById('scrollIndicator');
+      const isMobile = isTouchDevice();
+
+      let mouseX = 0, mouseY = 0, ticking = false;
+
+      // Only initialize mouse effects on non-touch devices
+      if (!isMobile) {
+        const updateMousePosition = (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+
+          if (ticking) return;
+          ticking = true;
+
+          requestAnimationFrame(() => {
+            const scrollY = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight;
+            const winWidth = window.innerWidth;
+
+            body.style.setProperty('--mouse-x', `${(mouseX / winWidth) * 100}%`);
+            body.style.setProperty('--mouse-y', `${((mouseY + scrollY) / docHeight) * 100}%`);
+
+            updateTiltEffect();
+            ticking = false;
+          });
+        };
+
+        // Tilt effect with cached calculations
+        let tiltRect = null;
+        const updateTiltEffect = () => {
+          if (!tiltCard) return;
+
+          if (!tiltRect) tiltRect = tiltCard.getBoundingClientRect();
+          const isInView = tiltRect.top < window.innerHeight && tiltRect.bottom > 0;
+
+          if (isInView) {
+            const centerX = tiltRect.left + tiltRect.width * 0.5;
+            const centerY = tiltRect.top + tiltRect.height * 0.5;
+            const deltaX = (mouseX - centerX) / (tiltRect.width * 0.5);
+            const deltaY = (mouseY - centerY) / (tiltRect.height * 0.5);
+
+            tiltCard.style.transform = `perspective(1000px) rotateX(${-deltaY * 0.5}deg) rotateY(${deltaX * 0.5}deg) scale3d(1.002, 1.002, 1.002)`;
+          } else {
+            tiltCard.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+          }
+        };
+
+        // Reset tilt rect on resize
+        window.addEventListener('resize', () => { tiltRect = null; }, { passive: true });
+
+        document.addEventListener('mousemove', updateMousePosition, { passive: true });
+
+        const resetTilt = () => {
+          tiltCard?.style.setProperty('transform', 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)');
+        };
+
+        document.addEventListener('mouseleave', resetTilt, { passive: true });
+
+        // Optimized scroll handler
+        let scrollTicking = false;
+        const onScroll = () => {
+          if (scrollTicking) return;
+          scrollTicking = true;
+
+          requestAnimationFrame(() => {
+            const scrollY = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight;
+            body.style.setProperty('--mouse-y', `${((mouseY + scrollY) / docHeight) * 100}%`);
+            scrollTicking = false;
+          });
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+      }
+
+      // Dark mode toggle
+      darkModeToggle?.addEventListener('click', () => {
+        const html = document.documentElement;
+        html.classList.toggle('dark');
+        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+      });
+
+      // Scroll indicator
+      scrollIndicator?.addEventListener('click', () => {
+        document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      // Remove will-change after animations complete (performance optimization)
+      document.querySelectorAll('.elegant-entrance, .elegant-entrance-delay-1, .elegant-entrance-delay-2').forEach(el => {
+        el.addEventListener('animationend', () => {
+          el.style.willChange = 'auto';
+        }, { once: true });
+      });
+    });
+  </script>
+</body>
+
+</html>
