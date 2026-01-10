@@ -2,7 +2,7 @@
 
 Modern, ultra-optimized personal portfolio. Built for speed and elegance.
 
-![Lighthouse](https://img.shields.io/badge/lighthouse-98-success) ![PWA](https://img.shields.io/badge/PWA-ready-blueviolet)
+![Lighthouse](https://img.shields.io/badge/lighthouse-99-success)
 
 ## Features
 
@@ -25,7 +25,7 @@ npm run build    # Production build
 
 ## Performance
 
-- **98/100** Lighthouse Performance
+- **99/100** Lighthouse Performance
 - **100/100** Accessibility, Best Practices, SEO
 - GPU-accelerated animations
 - Optimized for mobile & reduced motion
