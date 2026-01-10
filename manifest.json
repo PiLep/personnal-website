@@ -1,12 +1,12 @@
 {
   "name": "Pierre Lepetit — Portfolio",
-  "short_name": "Pierre Lepetit",
-  "description": "CTO & Co-founder at Kanta. Focused on building web products, AI revolution, and tech leadership.",
+  "short_name": "P. Lepetit",
+  "description": "CTO & Co-founder at Kanta",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0ea5e9",
-  "orientation": "portrait-primary",
+  "orientation": "any",
   "categories": ["business", "portfolio"],
   "lang": "fr"
 }

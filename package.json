@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "mkdir -p dist && tailwindcss -i ./src/input.css -o ./dist/tailwind.css --watch",
-    "build": "mkdir -p dist && tailwindcss -i ./src/input.css -o ./dist/tailwind.css --minify",
+    "build": "mkdir -p dist && NODE_ENV=production tailwindcss -i ./src/input.css -o ./dist/tailwind.css --minify",
     "serve": "python3 -m http.server 5173"
   },
   "devDependencies": {

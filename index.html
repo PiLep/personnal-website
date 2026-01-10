@@ -28,23 +28,32 @@
   <link rel="icon" href="./static/favicon.ico" />
   <link rel="manifest" href="./manifest.json" />
 
-  <!-- Optimized font loading with font-display -->
+  <!-- Critical inline CSS for instant render -->
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;font-family:Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;color:#18181b;background:#fff}
+    .dark body{color:#fafafa;background:#0a0a0a}
+    @media(prefers-color-scheme:dark){html:not(.light) body{color:#fafafa;background:#0a0a0a}}
+    .min-h-screen{min-height:100vh}
+    .flex{display:flex}
+    .hidden{display:none}
+  </style>
+
+  <!-- Preload and load full CSS -->
+  <link rel="preload" href="./dist/tailwind.css" as="style" />
+  <link rel="stylesheet" href="./dist/tailwind.css" media="all" />
+
+  <!-- Optimized font loading with display=swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@600;700&display=swap"
-    rel="stylesheet" media="print" onload="this.media='all';this.onload=null" />
+    rel="stylesheet" media="print" onload="this.media='all';this.onload=null" fetchpriority="low" />
   <noscript>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@600;700&display=swap"
       rel="stylesheet" />
   </noscript>
-
-  <link rel="stylesheet" href="./dist/tailwind.css" />
-
-  <!-- Preload critical images with fetchpriority -->
-  <link rel="preload" as="image" href="./assets/img/linkedin.svg" fetchpriority="high" />
-  <link rel="preload" as="image" href="./assets/img/github-mark.svg" fetchpriority="high" />
 
   <!-- DNS prefetch for external links -->
   <link rel="dns-prefetch" href="https://kanta.fr" />
@@ -69,7 +78,8 @@
     </svg>
   </button>
 
-  <!-- Section 1: Hero -->
+  <main>
+    <!-- Section 1: Hero -->
   <section id="hero"
     class="relative z-10 min-h-screen flex flex-col justify-center items-center perspective-container px-8"
     style="content-visibility: auto">
@@ -91,13 +101,12 @@
       <div class="flex gap-3 items-center mt-3 ml-2 elegant-entrance-delay-2">
         <a href="https://www.linkedin.com/in/pilep/" target="_blank" rel="noopener noreferrer"
           class="social-link hover-lift" aria-label="LinkedIn profile">
-          <img src="./assets/img/linkedin.svg" alt="" width="24" height="24" class="w-6 h-6" decoding="async"
-            fetchpriority="high" />
+          <img src="./assets/img/linkedin.svg" alt="" width="24" height="24" class="w-6 h-6" decoding="async" />
         </a>
         <a href="https://github.com/PiLep" target="_blank" rel="noopener noreferrer" class="social-link hover-lift"
           aria-label="GitHub profile">
           <img src="./assets/img/github-mark.svg" alt="" width="20" height="20" class="w-5 h-5 dark:invert"
-            decoding="async" fetchpriority="high" />
+            decoding="async" />
         </a>
       </div>
     </div>
@@ -163,16 +172,12 @@
 
     </div>
   </section>
+  </main>
 
   <script>
-    // Initialize theme immediately (FOUC prevention)
-    (function () {
-      try {
-        const theme = localStorage.getItem('theme') || 'light';
-        if (theme === 'dark') document.documentElement.classList.add('dark');
-      } catch (e) { }
-    })();
-
+    // Initialize theme immediately (FOUC prevention) - inline for fastest execution
+    !function(){try{("dark"===localStorage.getItem("theme")||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.documentElement.classList.add("dark")}catch(e){}}();
+    
     // Detect touch capability
     const isTouchDevice = () => ('ontouchstart' in window || navigator.maxTouchPoints > 0);
 
