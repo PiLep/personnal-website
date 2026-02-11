@@ -1,6 +1,6 @@
-# Pierre Lepetit — Portfolio
+# Pierre Lepetit — Website
 
-Modern, ultra-optimized personal portfolio. Built for speed and elegance.
+Modern, optimized personal website.
 
 ![Lighthouse](https://img.shields.io/badge/lighthouse-99-success)
 
