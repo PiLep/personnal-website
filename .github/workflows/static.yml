@@ -40,14 +40,31 @@ jobs:
       
       - name: Build Tailwind CSS
         run: npm run build
-      
+
+      - name: Cache-bust CSS
+        run: |
+          HASH=$(git rev-parse --short HEAD)
+          sed -i "s|dist/tailwind.css|dist/tailwind.css?v=${HASH}|g" index.html
+
+      - name: Prepare deploy directory
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp -r dist _site/
+          cp -r assets _site/
+          cp -r static _site/
+          cp manifest.json _site/
+          cp robots.txt _site/
+          cp sitemap.xml _site/
+          [ -f _headers ] && cp _headers _site/ || true
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ./_site
 
   # Deployment job
   deploy:

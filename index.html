@@ -132,12 +132,12 @@
         <div>
           <h3 class="font-display text-xl font-semibold opacity-70">Chief Technology Officer & Co-founder</h3>
           <a href="https://kanta.fr" target="_blank" rel="noopener noreferrer"
-            class="company-link inline-block mt-2 hover-lift font-black text-xl" style="color: #ff9000;">
+            class="company-link inline-block mt-2 hover-lift font-black text-xl text-[#ff9000]">
             Kanta
           </a>
           |
           <a href="https://visma.com" target="_blank" rel="noopener noreferrer"
-            class="company-link inline-block mt-2 hover-lift font-black text-xl text-red dark:text-white">Visma</a>
+            class="company-link inline-block mt-2 hover-lift font-black text-xl text-red-600 dark:text-white">Visma</a>
         </div>
       </div>
 
@@ -212,12 +212,11 @@
           });
         };
 
-        // Tilt effect with cached calculations
-        let tiltRect = null;
+        // Tilt effect
         const updateTiltEffect = () => {
           if (!tiltCard) return;
 
-          if (!tiltRect) tiltRect = tiltCard.getBoundingClientRect();
+          const tiltRect = tiltCard.getBoundingClientRect();
           const isInView = tiltRect.top < window.innerHeight && tiltRect.bottom > 0;
 
           if (isInView) {
@@ -231,9 +230,6 @@
             tiltCard.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
           }
         };
-
-        // Reset tilt rect on resize
-        window.addEventListener('resize', () => { tiltRect = null; }, { passive: true });
 
         document.addEventListener('mousemove', updateMousePosition, { passive: true });
 
