@@ -1,57 +1,52 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pierre Lepetit — CTO & Co-founder at Kanta</title>
   <meta name="description"
-    content="CTO & Co-founder at Kanta. Focused on building web products, AI revolution, and tech leadership." />
+    content="Pierre Lepetit — I build web products and the teams behind them. CTO & Co-founder at Kanta (Visma)." />
   <meta name="author" content="Pierre Lepetit" />
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#faf9f6" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pierrelepetit.com/" />
   <meta property="og:title" content="Pierre Lepetit — CTO & Co-founder at Kanta" />
   <meta property="og:description"
-    content="CTO & Co-founder at Kanta. Focused on building web products, AI revolution, and tech leadership." />
+    content="I build web products and the teams behind them. CTO & Co-founder at Kanta (Visma)." />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary" />
   <meta property="twitter:url" content="https://pierrelepetit.com/" />
   <meta property="twitter:title" content="Pierre Lepetit — CTO & Co-founder at Kanta" />
   <meta property="twitter:description"
-    content="CTO & Co-founder at Kanta. Focused on building web products, AI revolution, and tech leadership." />
+    content="I build web products and the teams behind them. CTO & Co-founder at Kanta (Visma)." />
 
   <link rel="icon" href="./static/favicon.ico" />
   <link rel="manifest" href="./manifest.json" />
 
-  <!-- Critical inline CSS for instant render -->
+  <!-- Critical inline CSS for instant render (FOUC prevention) -->
   <style>
     *{box-sizing:border-box}
-    body{margin:0;min-height:100vh;font-family:Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;color:#18181b;background:#fff}
-    .dark body{color:#fafafa;background:#0a0a0a}
-    @media(prefers-color-scheme:dark){html:not(.light) body{color:#fafafa;background:#0a0a0a}}
-    .min-h-screen{min-height:100vh}
-    .flex{display:flex}
-    .hidden{display:none}
+    html,body{margin:0;padding:0}
+    body{min-height:100vh;font-family:'Space Grotesk',ui-sans-serif,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;color:#1a1916;background:#faf9f6}
   </style>
 
-  <!-- Preload and load full CSS -->
-  <link rel="preload" href="./dist/tailwind.css" as="style" />
-  <link rel="stylesheet" href="./dist/tailwind.css" media="all" />
+  <!-- Preload and load full CSS (versioned to bust stale caches) -->
+  <link rel="preload" href="./dist/tailwind.css?v=5" as="style" />
+  <link rel="stylesheet" href="./dist/tailwind.css?v=5" media="all" />
 
   <!-- Optimized font loading with display=swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet" media="print" onload="this.media='all';this.onload=null" fetchpriority="low" />
   <noscript>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet" />
   </noscript>
 
@@ -60,221 +55,165 @@
   <link rel="dns-prefetch" href="https://visma.com" />
 </head>
 
-<body
-  class="min-h-screen bg-animated-gradient text-zinc-900 dark:text-zinc-100 font-secondary antialiased transition-colors duration-500">
-  <!-- Dark Mode Toggle -->
-  <button id="darkModeToggle"
-    class="dark-mode-toggle fixed top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/90 dark:bg-zinc-800/90 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-all duration-300 flex items-center justify-center elegant-entrance-delay-2"
-    aria-label="Toggle dark mode" type="button">
-    <svg id="sunIcon" class="w-6 h-6 text-zinc-900 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-      aria-hidden="true">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-    </svg>
-    <svg id="moonIcon" class="w-6 h-6 text-zinc-100 hidden dark:block" fill="none" stroke="currentColor"
-      viewBox="0 0 24 24" aria-hidden="true">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-    </svg>
-  </button>
+<body class="pl-root">
+  <canvas id="bg" class="pl-bg" aria-hidden="true"></canvas>
 
-  <main>
-    <!-- Section 1: Hero -->
-  <section id="hero"
-    class="relative z-10 min-h-screen flex flex-col justify-center items-center perspective-container px-8"
-    style="content-visibility: auto">
-    <div class="w-full max-w-5xl tilt-card">
-      <h1
-        class="font-display leading-[0.86] tracking-[-0.04em] text-6xl sm:text-7xl lg:text-8xl elegant-entrance text-animated-gradient-hover">
-        <span class="text-animated-gradient">
-          <span class="block sm:inline">Pierre</span><span class="hidden sm:inline">&nbsp;</span><span
-            class="block sm:inline">Lepetit</span>
-        </span>
-      </h1>
-      <p
-        class="font-secondary font-medium text-xl sm:text-2xl tracking-[-0.02em] opacity-80 ml-1 mt-2 elegant-entrance-delay-1">
-        <span class="font-black text-animated-gradient relative left-[0.05em]">CTO @
-          <a href="https://kanta.fr" target="_blank" rel="noopener noreferrer"
-            class="font-black text-link-bright text-animated-gradient shimmer-link">Kanta</a></span>
-      </p>
+  <main class="pl-wrap">
 
-      <div class="flex gap-3 items-center mt-3 ml-2 elegant-entrance-delay-2">
-        <a href="https://www.linkedin.com/in/pilep/" target="_blank" rel="noopener noreferrer"
-          class="social-link hover-lift" aria-label="LinkedIn profile">
-          <img src="./assets/img/linkedin.svg" alt="" width="24" height="24" class="w-6 h-6" decoding="async" />
-        </a>
-        <a href="https://github.com/PiLep" target="_blank" rel="noopener noreferrer" class="social-link hover-lift"
-          aria-label="GitHub profile">
-          <img src="./assets/img/github-mark.svg" alt="" width="20" height="20" class="w-5 h-5 dark:invert"
-            decoding="async" />
-        </a>
+    <!-- Top bar -->
+    <div class="pl-topbar pl-up">
+      <div class="pl-chip">
+        <img class="pl-avatar" src="./assets/pierre.png" alt="Pierre Lepetit" width="52" height="52"
+          decoding="async" />
+        <div class="pl-id">
+          <span class="pl-name">Pierre Lepetit</span>
+          <span class="pl-handle pl-mono">@pilep · Caen, FR</span>
+        </div>
       </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <button id="scrollIndicator"
-      class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center justify-center transition-all duration-300 elegant-entrance-delay-2"
-      aria-label="Scroll to next section" type="button">
-      <svg class="w-8 h-8 animate-bounce-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-      </svg>
-    </button>
-  </section>
+    <!-- Hero -->
+    <h1 class="pl-hero pl-up" style="--d:.08s">I build web products<br><span class="accent">and the teams
+        behind them</span>.</h1>
 
-  <!-- Section 2: About/Experience -->
-  <section id="about" class="relative z-10 min-h-screen flex flex-col justify-center items-start px-8 py-20"
-    style="content-visibility: auto; contain-intrinsic-size: auto 100vh">
-    <div class="w-full max-w-3xl mx-auto space-y-24">
+    <!-- Bento -->
+    <div class="pl-bento">
 
-      <!-- Experience -->
-      <div class="space-y-4">
-        <h2 class="font-display text-2xl sm:text-3xl text-animated-gradient">Currently</h2>
+      <!-- Currently -->
+      <div class="pl-card pl-up" style="--d:.12s">
+        <div class="pl-kicker pl-mono">Currently</div>
         <div>
-          <h3 class="font-display text-xl font-semibold opacity-70">Chief Technology Officer & Co-founder</h3>
-          <a href="https://kanta.fr" target="_blank" rel="noopener noreferrer"
-            class="company-link inline-block mt-2 hover-lift font-black text-xl text-[#ff9000]">
-            Kanta
-          </a>
-          |
-          <a href="https://visma.com" target="_blank" rel="noopener noreferrer"
-            class="company-link inline-block mt-2 hover-lift font-black text-xl text-red-600 dark:text-white">Visma</a>
+          <div class="pl-card-title">Kanta <span class="muted">· Visma</span></div>
+          <div class="pl-card-sub">Co-founded · keeping prod up</div>
         </div>
       </div>
 
-      <!-- Skills -->
-      <div class="space-y-4">
-        <h2 class="font-display text-2xl sm:text-3xl text-animated-gradient">Focus on</h2>
-        <div class="flex flex-wrap gap-8">
-          <span class="badge-minimal badge-blue" data-tooltip="Full-stack development & product design">Build web
-            products</span>
-          <span class="badge-minimal badge-purple" data-tooltip="AI Driven Development with agents">AI revolution</span>
-          <span class="badge-minimal badge-orange" data-tooltip="Team building & technical strategy">Tech
-            Leadership</span>
+      <!-- Focus -->
+      <div class="pl-card pl-up" style="--d:.2s">
+        <div class="pl-kicker pl-mono">Focus</div>
+        <div class="pl-list">
+          <div class="pl-focus-row"><span class="pl-focus-num pl-mono">01</span><span class="pl-focus-label">Web
+              products</span></div>
+          <div class="pl-focus-row"><span class="pl-focus-num pl-mono">02</span><span class="pl-focus-label">AI
+              revolution</span></div>
+          <div class="pl-focus-row"><span class="pl-focus-num pl-mono">03</span><span class="pl-focus-label">Tech
+              leadership</span></div>
         </div>
       </div>
 
-      <!-- Contact -->
-      <div class="space-y-4">
-        <h2 class="font-display text-2xl sm:text-3xl text-animated-gradient">Connect</h2>
-        <div class="flex gap-6 items-center">
-          <a href="https://www.linkedin.com/in/pilep/" target="_blank" rel="noopener noreferrer"
-            class="social-link hover-lift" aria-label="LinkedIn profile">
-            <img src="./assets/img/linkedin.svg" alt="" width="32" height="32" class="w-8 h-8" loading="lazy"
+      <!-- Stack -->
+      <div class="pl-card pl-up" style="--d:.28s">
+        <div class="pl-kicker pl-mono">Stack</div>
+        <div class="pl-list">
+          <div class="pl-stack-row">
+            <img class="pl-stack-icon" src="./assets/img/claude.png" alt="" width="18" height="18" loading="lazy"
               decoding="async" />
-          </a>
-          <a href="https://github.com/PiLep" target="_blank" rel="noopener noreferrer" class="social-link hover-lift"
-            aria-label="GitHub profile">
-            <img src="./assets/img/github-mark.svg" alt="" width="28" height="28" class="w-7 h-7 dark:invert"
-              loading="lazy" decoding="async" />
-          </a>
+            <span class="pl-stack-label">Claude Code</span>
+          </div>
+          <div class="pl-stack-row">
+            <img class="pl-stack-icon rounded" src="./assets/img/dust.jpg" alt="" width="18" height="18" loading="lazy"
+              decoding="async" />
+            <span class="pl-stack-label">Dust</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Connect -->
+      <div class="pl-card pl-up" style="--d:.36s">
+        <div class="pl-kicker pl-mono">Connect</div>
+        <div class="pl-list">
+          <a class="pl-link" href="https://www.linkedin.com/in/pilep/" target="_blank" rel="noopener noreferrer">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
+              <path
+                d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
+            </svg>LinkedIn</a>
+          <a class="pl-link" href="https://github.com/PiLep" target="_blank" rel="noopener noreferrer">
+            <svg width="17" height="17" viewBox="0 0 98 96" fill="var(--ink)" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" />
+            </svg>GitHub</a>
         </div>
       </div>
 
     </div>
-  </section>
   </main>
 
   <script>
-    // Initialize theme immediately (FOUC prevention) - inline for fastest execution
-    !function(){try{("dark"===localStorage.getItem("theme")||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.documentElement.classList.add("dark")}catch(e){}}();
-    
-    // Detect touch capability
-    const isTouchDevice = () => ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    (function () {
+      // ---- Animated topographic background (light theme) ----
+      var cv = document.getElementById('bg');
+      if (!cv || !cv.getContext) return;
+      var ctx = cv.getContext('2d');
+      var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var LINES = 22;
+      var INK = '26,25,22';
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const body = document.body;
-      const tiltCard = document.querySelector('.tilt-card');
-      const darkModeToggle = document.getElementById('darkModeToggle');
-      const scrollIndicator = document.getElementById('scrollIndicator');
-      const isMobile = isTouchDevice();
+      // Accent is fixed in light mode — read it once, not every frame.
+      var hex = (getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#ff7a00');
+      var AR = parseInt(hex.slice(1, 3), 16);
+      var AG = parseInt(hex.slice(3, 5), 16);
+      var AB = parseInt(hex.slice(5, 7), 16);
+      var ACCENT = AR + ',' + AG + ',' + AB;
 
-      let mouseX = 0, mouseY = 0, ticking = false;
+      var W = 0, H = 0, t = reduce ? 1.4 : 0, raf = 0;
 
-      // Only initialize mouse effects on non-touch devices
-      if (!isMobile) {
-        const updateMousePosition = (e) => {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-
-          if (ticking) return;
-          ticking = true;
-
-          requestAnimationFrame(() => {
-            const scrollY = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight;
-            const winWidth = window.innerWidth;
-
-            body.style.setProperty('--mouse-x', `${(mouseX / winWidth) * 100}%`);
-            body.style.setProperty('--mouse-y', `${((mouseY + scrollY) / docHeight) * 100}%`);
-
-            updateTiltEffect();
-            ticking = false;
-          });
-        };
-
-        // Tilt effect
-        const updateTiltEffect = () => {
-          if (!tiltCard) return;
-
-          const tiltRect = tiltCard.getBoundingClientRect();
-          const isInView = tiltRect.top < window.innerHeight && tiltRect.bottom > 0;
-
-          if (isInView) {
-            const centerX = tiltRect.left + tiltRect.width * 0.5;
-            const centerY = tiltRect.top + tiltRect.height * 0.5;
-            const deltaX = (mouseX - centerX) / (tiltRect.width * 0.5);
-            const deltaY = (mouseY - centerY) / (tiltRect.height * 0.5);
-
-            tiltCard.style.transform = `perspective(1000px) rotateX(${-deltaY * 0.5}deg) rotateY(${deltaX * 0.5}deg) scale3d(1.002, 1.002, 1.002)`;
-          } else {
-            tiltCard.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-          }
-        };
-
-        document.addEventListener('mousemove', updateMousePosition, { passive: true });
-
-        const resetTilt = () => {
-          tiltCard?.style.setProperty('transform', 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)');
-        };
-
-        document.addEventListener('mouseleave', resetTilt, { passive: true });
-
-        // Optimized scroll handler
-        let scrollTicking = false;
-        const onScroll = () => {
-          if (scrollTicking) return;
-          scrollTicking = true;
-
-          requestAnimationFrame(() => {
-            const scrollY = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight;
-            body.style.setProperty('--mouse-y', `${((mouseY + scrollY) / docHeight) * 100}%`);
-            scrollTicking = false;
-          });
-        };
-
-        window.addEventListener('scroll', onScroll, { passive: true });
+      function resize() {
+        W = cv.clientWidth; H = cv.clientHeight;
+        cv.width = W * dpr; cv.height = H * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       }
 
-      // Dark mode toggle
-      darkModeToggle?.addEventListener('click', () => {
-        const html = document.documentElement;
-        html.classList.toggle('dark');
-        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-      });
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
 
-      // Scroll indicator
-      scrollIndicator?.addEventListener('click', () => {
-        document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
+        var gx = W * (0.5 + 0.34 * Math.cos(t * 0.5));
+        var gy = H * (0.45 + 0.32 * Math.sin(t * 0.7));
+        var R = Math.max(W, H) * 0.6;
+        var grd = ctx.createRadialGradient(gx, gy, 0, gx, gy, R);
+        grd.addColorStop(0, 'rgba(' + ACCENT + ',0.14)');
+        grd.addColorStop(1, 'rgba(' + ACCENT + ',0)');
+        ctx.fillStyle = grd; ctx.fillRect(0, 0, W, H);
 
-      // Remove will-change after animations complete (performance optimization)
-      document.querySelectorAll('.elegant-entrance, .elegant-entrance-delay-1, .elegant-entrance-delay-2').forEach(el => {
-        el.addEventListener('animationend', () => {
-          el.style.willChange = 'auto';
-        }, { once: true });
-      });
-    });
+        ctx.lineWidth = 1.3;
+        for (var i = 0; i < LINES; i++) {
+          var baseY = (i + 0.5) / LINES * H;
+          var k = Math.max(0, 1 - Math.abs(baseY - gy) / (H * 0.5));
+          var kk = k * k;
+          var amp = 10 + (i % 5) * 5 + kk * 26;
+          ctx.beginPath();
+          for (var x = -10; x <= W + 10; x += 10) {
+            var y = baseY + Math.sin(x * 0.006 + t * 1.1 + i * 0.45) * amp + Math.cos(x * 0.013 - t * 0.7 + i) * 7;
+            if (x < 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          }
+          var a = 0.06 + kk * 0.42;
+          ctx.strokeStyle = (kk > 0.25 ? 'rgba(' + ACCENT : 'rgba(' + INK) + ',' + a + ')';
+          ctx.stroke();
+        }
+      }
+
+      function frame() {
+        raf = requestAnimationFrame(frame);
+        t += 0.006;
+        draw();
+      }
+
+      resize();
+      window.addEventListener('resize', function () { resize(); if (reduce) draw(); }, { passive: true });
+
+      // Pause the loop while the tab is hidden to save CPU/battery.
+      if (!reduce) {
+        document.addEventListener('visibilitychange', function () {
+          if (document.hidden) {
+            cancelAnimationFrame(raf); raf = 0;
+          } else if (!raf) {
+            frame();
+          }
+        });
+      }
+
+      if (reduce) { draw(); } else { frame(); }
+    })();
   </script>
 </body>
 
